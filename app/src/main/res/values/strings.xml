@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">My City</string>
+    <string name="name_city">Caserta</string>
+    <string name="category">Categories</string>
+    <string name="coffe_shops">Coffe Shops</string>
+    <string name="select_Card">SelectCard</string>
+    <string name="details_Card">DetailsCard</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="kid_friendly">Kid-friendly Places</string>
+    <string name="parks">Parks</string>
+    <string name="shopping_centers">Shopping Centers</string>
+    <string name="information_card">Information Card</string>
+    <string name="back_button">Back</string>
+</resources>
