@@ -1,22 +1,24 @@
-package com.example.mycity.ui.theme
+package com.example.mycity.ui.test
 
-import androidx.annotation.StringRes
+import android.annotation.SuppressLint
+import android.content.ActivityNotFoundException
+import android.content.Context
+import android.content.Intent
+import android.widget.Toast
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
-import androidx.compose.material.Switch
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.mycity.R
+import androidx.core.content.ContextCompat
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.compose.*
@@ -31,7 +33,7 @@ fun DetailsCard(
     var properties by remember {
         mutableStateOf(MapProperties(mapType = MapType.SATELLITE))
     }
-    Column (
+    Column(
         modifier = modifier
             .background(MaterialTheme.colorScheme.background)
             .padding(16.dp)
@@ -64,7 +66,9 @@ fun DetailsCard(
             position = CameraPosition.fromLatLngZoom(positionCardElement, 12f)
         }
         GoogleMap(
-            modifier = Modifier.fillMaxWidth().height(300.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(300.dp),
             cameraPositionState = cameraPositionState
         ) {
             Marker(
@@ -87,5 +91,66 @@ fun DetailsCard(
                 }
             )*/
         }
+
+        val intentContext = LocalContext.current
+        ShareDetailsCard(
+            Activity = Activity(Activity.Title,Activity.Image,Activity.Description,Activity.category,Activity.address,Activity.latitude,Activity.longitude,Activity.link),
+            onShareButtonClicked = {
+                shareCityCardInformation(
+                    intentContext = intentContext,
+                    Activity = Activity(Activity.Title,Activity.Image,Activity.Description,Activity.category,Activity.address,Activity.latitude,Activity.longitude,Activity.link)
+                )
+            }
+        )
+    }
+}
+
+@Composable
+fun ShareDetailsCard(
+    onShareButtonClicked: () -> Unit,
+    Activity: Activity,
+    modifier: Modifier = Modifier
+) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+
+    ) {
+        Spacer(modifier = Modifier.height(1.dp))
+            Button(
+                colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colorScheme.background, backgroundColor = MaterialTheme.colorScheme.primary),
+                onClick = onShareButtonClicked,
+                shape = RoundedCornerShape(50,50,50,50),
+                modifier = modifier
+                    .padding(20.dp)
+                    .width(400.dp)
+                    .height(50.dp),
+                //.background(MaterialTheme.colorScheme.background)
+            ) {
+                Text(text = "Share position " + Activity.Title, style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.background)
+            }
+    }
+}
+
+@SuppressLint("ResourceType")
+private fun shareCityCardInformation(intentContext: Context,Activity: Activity) {
+    val sendIntent = Intent().apply {
+        action = Intent.ACTION_SEND
+        putExtra(
+            Intent.EXTRA_TEXT,
+            ("Hello! Look at this place:\n" + Activity.link + "\nfrom the My City app by Nicola Piccirillo.\n" + "For other jobs, visit https://github.com/Apocalixs-Nick")
+        )
+        type = "text/plain"
+    }
+
+    val shareIntent = Intent.createChooser(sendIntent, null)
+
+    try {
+        ContextCompat.startActivity(intentContext, shareIntent, null)
+    } catch (e: ActivityNotFoundException) {
+        Toast.makeText(
+            intentContext,
+            ("ERROR"),
+            Toast.LENGTH_LONG
+        ).show()
     }
 }

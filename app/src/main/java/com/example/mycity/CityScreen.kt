@@ -7,7 +7,6 @@ import androidx.compose.material.MaterialTheme.colors
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -15,8 +14,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.ActivityNavigator
-import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -24,10 +21,9 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.mycity.data.CategoryDataSource.category_image
 import com.example.mycity.data.CategoryDataSource.category_title
-import com.example.mycity.ui.theme.*
-import com.example.mycity.ui.theme.utils.CityContentnType
+import com.example.mycity.ui.test.*
+import com.example.mycity.ui.test.utils.CityContentnType
 import com.example.mycity.CityAppAppBar as CityAppAppBar
-import com.example.mycity.ui.theme.Activity as Activity
 
 enum class CityScreen(@StringRes val title: Int) {
     Start(title = R.string.app_name),
@@ -50,8 +46,8 @@ fun CityAppAppBar(
     modifier: Modifier = Modifier
 ) {
     TopAppBar(
-        backgroundColor = colors.secondary,
-        title = { Text(currentScreenTitle, style = MaterialTheme.typography.titleLarge) },
+        backgroundColor = colors.secondaryVariant,
+        title = { Text(currentScreenTitle, style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onBackground) },
         modifier = modifier,
         navigationIcon = {
             if (canNavigateBack) {

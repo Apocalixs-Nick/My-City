@@ -1,23 +1,16 @@
 package com.example.mycity
 
 import androidx.activity.ComponentActivity
-import androidx.compose.material3.windowsizeclass.WindowHeightSizeClass
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
-import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
-import androidx.test.espresso.action.ViewActions.click
-import com.example.mycity.data.ActivitiesCardDataSource
-import com.example.mycity.data.ActivitiesCardDataSource.activities
-import com.example.mycity.ui.theme.Activity
-import com.example.mycity.ui.theme.CityViewModel
-import com.example.mycity.ui.theme.onNodeWithStringId
+import com.example.mycity.ui.test.CityViewModel
+import com.example.mycity.ui.test.onNodeWithStringId
 import org.junit.Assert.assertEquals
-import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 

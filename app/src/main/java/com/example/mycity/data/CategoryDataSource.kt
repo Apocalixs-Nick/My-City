@@ -1,8 +1,6 @@
 package com.example.mycity.data
 
-import androidx.annotation.StringRes
 import com.example.mycity.R
-import com.example.mycity.ui.theme.CityCategory
 
 object CategoryDataSource {
 /*val categories = listOf(

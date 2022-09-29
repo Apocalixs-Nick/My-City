@@ -1,8 +1,6 @@
-package com.example.mycity.ui.theme
+package com.example.mycity.ui.test
 
-import android.icu.text.CaseMap
 import androidx.lifecycle.ViewModel
-import com.example.mycity.data.ActivitiesCardDataSource
 import com.example.mycity.data.CategoryDataSource
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -20,6 +18,7 @@ class CityViewModel : ViewModel() {
             )
         }
     }
+
     fun updateTitleAppBar(title: String) {
         _uiState.update { currentTitleState ->
             currentTitleState.copy(
@@ -27,6 +26,7 @@ class CityViewModel : ViewModel() {
             )
         }
     }
+
     fun updateActivitiesDetailsCard(activity: Activity) {
         _uiState.update { currentDetailsCard ->
             currentDetailsCard.copy(

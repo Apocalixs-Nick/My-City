@@ -1,7 +1,7 @@
 package com.example.mycity.data
 
 import com.example.mycity.R
-import com.example.mycity.ui.theme.Activity
+import com.example.mycity.ui.test.Activity
 
 object ActivitiesCardDataSource {
     val activities = listOf<Activity>(
@@ -12,7 +12,8 @@ object ActivitiesCardDataSource {
             category = R.string.shopping_centers,
             address = "Località Aurno, 87, 81025 Marcianise CE",
             latitude = 41.00446321838611,
-            longitude = 14.327885111353622
+            longitude = 14.327885111353622,
+            link = "https://g.page/cccampania?share"
         ),
         Activity(
             Title = "Reggia di Caserta",
@@ -21,7 +22,8 @@ object ActivitiesCardDataSource {
             category = R.string.parks,
             address = "Piazza Carlo di Borbone, 81100 Caserta CE",
             latitude = 41.07330567786938,
-            longitude = 14.327171740190835
+            longitude = 14.327171740190835,
+            link = "https://g.page/reggiadicaserta_beniculturali?share"
         ),
         Activity(
             Title = "Oasi WWF San Silvestro",
@@ -30,7 +32,8 @@ object ActivitiesCardDataSource {
             category = R.string.parks,
             address = "Via dei Giardini Reali, 78, 81100 Caserta CE",
             latitude = 41.101479526099354,
-            longitude = 14.322695551839722
+            longitude = 14.322695551839722,
+            link = "https://goo.gl/maps/voZxVKnF3vmafueWA"
         ),
         Activity(
             Title = "Century Park Caserta",
@@ -39,7 +42,8 @@ object ActivitiesCardDataSource {
             category = R.string.kid_friendly,
             address = "Via degli Ulivi, 7, 81100 Caserta CE",
             latitude = 41.068920598341975,
-            longitude = 14.358270153685107
+            longitude = 14.358270153685107,
+            link = "https://goo.gl/maps/PFV8jNTPWBJAmS1R7"
         ),
         Activity(
             Title = "Carbone Chic",
@@ -48,7 +52,8 @@ object ActivitiesCardDataSource {
             category = R.string.shopping_centers,
             address = "Via Nazionale Appia, 2, 81020 Casapulla CE",
             latitude = 41.07359239416675,
-            longitude = 14.298955482520457
+            longitude = 14.298955482520457,
+            link = "https://g.page/CarboneChic?share"
         ),
         Activity(
             Title = "I Masanielli di Francesco Martucci",
@@ -57,7 +62,8 @@ object ActivitiesCardDataSource {
             category = R.string.restaurants,
             address = "Viale Giulio Douhet, 11, 81100 Caserta CE",
             latitude = 41.07404398076164,
-            longitude = 14.318996821802331
+            longitude = 14.318996821802331,
+            link = "https://g.page/masaniellifrancescomartucci?share"
         )
     )
 }

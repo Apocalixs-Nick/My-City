@@ -1,7 +1,4 @@
-package com.example.mycity.ui.theme
-
-import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
+package com.example.mycity.ui.test
 
 data class CityCategory(
      val imagecategoryCity: List<Int> = listOf(),

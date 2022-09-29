@@ -1,4 +1,4 @@
-package com.example.mycity.ui.theme
+package com.example.mycity.ui.test
 
 import androidx.activity.ComponentActivity
 import androidx.annotation.StringRes

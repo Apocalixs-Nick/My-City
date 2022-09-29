@@ -1,4 +1,4 @@
-package com.example.mycity.ui.theme
+package com.example.mycity.ui.test
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
@@ -10,5 +10,6 @@ data class Activity(
     @StringRes val category: Int,
     val address: String,
     val latitude: Double,
-    val longitude: Double
+    val longitude: Double,
+    val link: String
 )
