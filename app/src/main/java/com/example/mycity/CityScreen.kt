@@ -8,9 +8,7 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -75,6 +73,9 @@ fun CityApp(
     val currentScreen = CityScreen.valueOf(
         backStackEntry?.destination?.route ?: CityScreen.Start.name
     )
+    var ricorda by remember {
+        mutableStateOf(viewModel)
+    }
     var title_card =
         if (stringResource(id = currentScreen.title) == CityScreen.SelectCard.name) uiState.titleAppBar
         else stringResource(

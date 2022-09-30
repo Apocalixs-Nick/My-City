@@ -126,7 +126,7 @@ fun ShareDetailsCard(
                     .height(50.dp),
                 //.background(MaterialTheme.colorScheme.background)
             ) {
-                Text(text = "Share position " + Activity.Title, style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.background)
+                Text(text = "Share position ", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.background)
             }
     }
 }
