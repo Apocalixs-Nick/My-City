@@ -84,6 +84,36 @@ object ActivitiesCardDataSource {
             latitude = 40.938994855895935,
             longitude = 14.82205088465575,
             link = "https://goo.gl/maps/rKpE4dgiyTn7Gchx8"
+        ),
+        Activity(
+            Title = "La Reggia Designer Outlet",
+            Image = R.drawable.reggiaoutlet,
+            Description = "L’Outlet Village di Marcianise (Caserta) “la Reggia” è un punto di riferimento in tutta la Campania per lo shopping di qualità. Il nome di questo Designer Outlet è un evidente omaggio alla Reggia di Caserta, facilmente raggiungibile dal centro, così come le principali località turistiche della provincia di Napoli.",
+            category = R.string.shopping_centers,
+            address = "S.P. 336 Sannitica, 81025 Marcianise CE",
+            latitude = 41.006549189165995,
+            longitude = 14.32137964142479,
+            link = "https://goo.gl/maps/N5jX4Dyud27C3Bg8A"
+        ),
+        Activity(
+            Title = "Caffetteria del Corso",
+            Image = R.drawable.caffecorso,
+            Description = "Con più di 40 anni di attività di produzione familiare.",
+            category = R.string.coffe_shops,
+            address = "Via Roma ,127, Aversa, Italy",
+            latitude = 40.97225233557485,
+            longitude = 14.207918569311522,
+            link = "https://g.page/caffetteriadelcorso-aversa?share"
+        ),
+        Activity(
+            Title = "Il Buco Lounge Bar",
+            Image = R.drawable.buco,
+            Description = "Ubicato in uno dei vicoli più caratteristici del centro storico di Caiazzo.",
+            category = R.string.coffe_shops,
+            address = "Vicolo S. Giovanni Battista, 81013 Caiazzo CE",
+            latitude = 41.17805061635622,
+            longitude = 14.366004738636827,
+            link = "https://goo.gl/maps/Mp3GcVrvUARXVo3XA"
         )
     )
 }
