@@ -64,6 +64,26 @@ object ActivitiesCardDataSource {
             latitude = 41.07404398076164,
             longitude = 14.318996821802331,
             link = "https://g.page/masaniellifrancescomartucci?share"
+        ),
+        Activity(
+            Title = "Autolinee Angelo Ferrazza & C",
+            Image = R.drawable.angeloferrazza,
+            Description = "La storia delle Autolinee Ferrazza è antica ed inizia agli albori del Secolo scorso con quattro fratelli, figli del signor Angelo Ferrazza, Antonio, Peppino, Michele e R.",
+            category = R.string.transport,
+            address = "Via Luigi Ferritto, 77, 81016 Piedimonte Matese CE",
+            latitude = 41.35317203339098,
+            longitude = 14.369318369201286,
+            link = "https://goo.gl/maps/x6yg4F4fy678jm9v9"
+        ),
+        Activity(
+            Title = "AIR Campania S.r.l",
+            Image = R.drawable.aircampania,
+            Description = "Società pubblica della Regione Campania che svolge le attività di gestione del sistema di trasporto locale urbano, regionale e provinciale.",
+            category = R.string.transport,
+            address = "Via Fasano Z. I. Pianodardine, 83100 Avellino",
+            latitude = 40.938994855895935,
+            longitude = 14.82205088465575,
+            link = "https://goo.gl/maps/rKpE4dgiyTn7Gchx8"
         )
     )
 }

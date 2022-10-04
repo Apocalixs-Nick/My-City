@@ -33,7 +33,8 @@ enum class CityScreen(@StringRes val title: Int) {
     Parks(title = R.string.parks),
     Shopping(title = R.string.shopping_centers),
     DetailsCard(title = R.string.select_Card),
-    InformationCard(title = R.string.information_card)
+    InformationCard(title = R.string.information_card),
+    Transport(title = R.string.transport)
 }
 
 @Composable

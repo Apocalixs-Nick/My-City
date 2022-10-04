@@ -26,6 +26,7 @@ class CityScreenTest {
     @get:Rule
     val composeTestRule = createAndroidComposeRule<ComponentActivity>()
 
+    //Test device window settings
     fun setWindowWidthSizeCompact() {
         composeTestRule.setContent {
             navController = TestNavHostController(LocalContext.current).apply {
@@ -47,6 +48,7 @@ class CityScreenTest {
         }
     }
 
+    //Test start-up screen with different window
     @Test
     @TestCompactWidth
     fun compactCityNavHost_verifyStartDestination() {
@@ -58,6 +60,7 @@ class CityScreenTest {
     @TestMediumWidth
     fun mediumCityNavHost_verifyStartDestination() {
         setWindowWidthSizeMedium()
+        assertEquals(viewModel.uiState.value.titleAppBar, CityScreen.Start.name)
         //navController.setCurrentDestination(CityScreen.Start.name)
     }
 
@@ -65,17 +68,21 @@ class CityScreenTest {
     @TestExpandedWidth
     fun expandedCityNavHost_verifyStartDestination() {
         setWindowWidthSizeExpanded()
+        assertEquals(viewModel.uiState.value.titleAppBar, CityScreen.Start.name)
         //navController.setCurrentDestination(CityScreen.Start.name)
     }
 
+    //Test operation of back navigation
     @Test
-    fun cupcakeNavHost_verifyBackNavigationNotShownOnStartOrderScreen() {
+    fun cityNavHost_verifyBackNavigationNotShownOnStartOrderScreen() {
         val backText = composeTestRule.activity.getString(R.string.back_button)
         composeTestRule.onNodeWithContentDescription(backText).assertDoesNotExist()
     }
 
+    //Back navigation operation test with different window
     @Test
-    fun cityNavHost_verifyBackNavigationShownOnCategoryScreen() {
+    @TestCompactWidth
+    fun compactCityNavHost_verifyBackNavigationShownOnCategoryScreen() {
         setWindowWidthSizeCompact()
         val backText = composeTestRule.activity.getString(R.string.back_button)
         composeTestRule.onNodeWithTag("START")
@@ -84,7 +91,29 @@ class CityScreenTest {
     }
 
     @Test
-    fun cityNavHost_clickStart_navigatesToSelectCategoryScreen() {
+    @TestMediumWidth
+    fun mediumCityNavHost_verifyBackNavigationShownOnCategoryScreen() {
+        setWindowWidthSizeMedium()
+        val backText = composeTestRule.activity.getString(R.string.back_button)
+        composeTestRule.onNodeWithTag("START")
+            .performClick()
+        composeTestRule.onNodeWithContentDescription(backText).assertIsDisplayed()
+    }
+
+    @Test
+    @TestExpandedWidth
+    fun expandedCityNavHost_verifyBackNavigationShownOnCategoryScreen() {
+        setWindowWidthSizeExpanded()
+        val backText = composeTestRule.activity.getString(R.string.back_button)
+        composeTestRule.onNodeWithTag("START")
+            .performClick()
+        composeTestRule.onNodeWithContentDescription(backText).assertIsDisplayed()
+    }
+
+    //Test navigation operation for category selection with different window
+    @Test
+    @TestCompactWidth
+    fun compactCityNavHost_clickStart_navigatesToSelectCategoryScreen() {
         setWindowWidthSizeCompact()
         composeTestRule.onNodeWithTag("START")
             .performClick()
@@ -94,8 +123,32 @@ class CityScreenTest {
         //assertEquals(R.string.shopping_centers, viewModel.uiState.value.titleAppBar)
     }
 
-    //Rewatch
     @Test
+    @TestMediumWidth
+    fun mediumCityNavHost_clickStart_navigatesToSelectCategoryScreen() {
+        setWindowWidthSizeMedium()
+        composeTestRule.onNodeWithTag("START")
+            .performClick()
+        composeTestRule.onNodeWithStringId(R.string.shopping_centers)
+            .performClick()
+        //composeTestRule.onNodeWithContentDescription(viewModel.uiState.value.titleAppBar).assertIsDisplayed()
+        //assertEquals(R.string.shopping_centers, viewModel.uiState.value.titleAppBar)
+    }
+
+    @Test
+    @TestExpandedWidth
+    fun expandedCityNavHost_clickStart_navigatesToSelectCategoryScreen() {
+        setWindowWidthSizeExpanded()
+        composeTestRule.onNodeWithTag("START")
+            .performClick()
+        composeTestRule.onNodeWithStringId(R.string.shopping_centers)
+            .performClick()
+        //composeTestRule.onNodeWithContentDescription(viewModel.uiState.value.titleAppBar).assertIsDisplayed()
+        //assertEquals(R.string.shopping_centers, viewModel.uiState.value.titleAppBar)
+    }
+
+    //Rewatch
+    /*@Test
     fun cityNavHost_clickShopping_navigatesToSelectShoppingCardScreen() {
         setWindowWidthSizeCompact()
         composeTestRule.onNodeWithTag("START")
@@ -110,5 +163,5 @@ class CityScreenTest {
             .performClick()
         //assertEquals(R.string.select_Card, viewModel.uiState.value.titleAppBar)
         //navController.setCurrentDestination(CityScreen.Shopping.name)
-    }
+    }*/
 }
