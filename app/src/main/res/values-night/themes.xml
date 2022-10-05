@@ -4,6 +4,6 @@
     <style name="Theme.MyCity" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:windowBackground">@color/darkgreen</item>
         <item name="android:statusBarColor">@color/black</item>
-        <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">3000</item>
+        <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">3500</item>
     </style>
 </resources>

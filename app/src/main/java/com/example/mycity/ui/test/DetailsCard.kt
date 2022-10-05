@@ -17,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import com.google.android.gms.maps.model.CameraPosition
@@ -43,23 +44,21 @@ fun DetailsCard(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        Spacer(modifier = Modifier.height(16.dp))
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Spacer(modifier = Modifier.height(16.dp))
-            Image(painter = painterResource(id = Activity.Image), contentDescription = null)
-            Spacer(modifier = Modifier.padding(top = 5.dp))
+            Spacer(modifier = Modifier.height(3.dp))
             Text(
                 text = Activity.Title,
                 style = MaterialTheme.typography.titleLarge
             )
-            Spacer(modifier = Modifier.padding(top = 2.dp))
+            Spacer(modifier = Modifier.padding(top = 5.dp))
+            Image(painter = painterResource(id = Activity.Image), contentDescription = null)
+            Spacer(modifier = Modifier.padding(top = 7.dp))
             Text(
                 text = Activity.Description,
                 style = MaterialTheme.typography.titleMedium
             )
-
         }
         val positionCardElement = LatLng(Activity.latitude, Activity.longitude)
         val cameraPositionState = rememberCameraPositionState {
