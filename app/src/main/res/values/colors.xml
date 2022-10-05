@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="lightgreen">#FFb3ffb3</color>
     <color name="darkgreen">#FF001a00</color>
+    <color name="darkeletric">#FF3e00b3</color>
+    <color name="eletric">#FFcdb3ff</color>
 </resources>

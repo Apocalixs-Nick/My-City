@@ -2,6 +2,9 @@ package com.example.mycity.ui.test
 
 import androidx.compose.ui.graphics.Color
 
+val Eletric = Color(0xffcdb3ff)
+val DarkEletric = Color(0xff3e00b3)
+
 val Green10 = Color(0xff003314)
 val Green20 = Color(0xff006627)
 val Green30 = Color(0xff00993b)

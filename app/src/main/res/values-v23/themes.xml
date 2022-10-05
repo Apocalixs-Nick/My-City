@@ -2,8 +2,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Theme.MyCity" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/eletric</item>
         <item name="android:statusBarColor">@color/white</item>
-        <item name="android:windowBackground">@color/lightgreen</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">3500</item>
     </style>

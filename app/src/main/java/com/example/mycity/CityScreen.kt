@@ -45,7 +45,7 @@ fun CityAppAppBar(
     modifier: Modifier = Modifier
 ) {
     TopAppBar(
-        backgroundColor = colors.secondaryVariant,
+        backgroundColor = MaterialTheme.colorScheme.onPrimary, //colors.secondaryVariant,
         title = { Text(currentScreenTitle, style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onBackground) },
         modifier = modifier,
         navigationIcon = {
