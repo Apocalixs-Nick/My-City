@@ -76,7 +76,7 @@ fun CityApp(
     val currentScreen = CityScreen.valueOf(
         backStackEntry?.destination?.route ?: CityScreen.Start.name
     )
-    var ricorda by remember {
+    var remeberPage by remember {
         mutableStateOf(viewModel)
     }
     var title_card =
