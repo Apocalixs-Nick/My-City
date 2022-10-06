@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
+//SelectCategory function
 @Composable
 fun SelectCategory(
     categoryImageList: List<Int>,

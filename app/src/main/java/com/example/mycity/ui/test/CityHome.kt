@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import com.example.mycity.CityScreen
 import com.example.mycity.R
 
+//City Home function(first page)
 @Composable
 fun CityHome(onNextButtonClicked: () -> Unit, modifier: Modifier = Modifier) {
     Column(
@@ -40,12 +41,14 @@ fun CityHome(onNextButtonClicked: () -> Unit, modifier: Modifier = Modifier) {
         )
         Text(text = stringResource(R.string.name_city), style = MaterialTheme.typography.titleLarge)
         Spacer(modifier = Modifier.height(120.dp))
+        //Calling the function CityButton
         CityButton(
             onClick = onNextButtonClicked
         )
     }
 }
 
+//City Home Button function
 @Composable
 fun CityButton(
     onClick: () -> Unit,
@@ -62,6 +65,7 @@ fun CityButton(
     }
 }
 
+//City Home function(Preview)
 @Preview
 @Composable
 fun CityHomePreview() {

@@ -3,6 +3,7 @@ package com.example.mycity.data
 import com.example.mycity.R
 import com.example.mycity.ui.test.Activity
 
+//Objects that compose the cards of the different categories
 object ActivitiesCardDataSource {
     val activities = listOf<Activity>(
         Activity(

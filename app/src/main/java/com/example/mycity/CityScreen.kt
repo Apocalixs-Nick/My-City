@@ -37,6 +37,7 @@ enum class CityScreen(@StringRes val title: Int) {
     Transport(title = R.string.transport)
 }
 
+//App Bar function
 @Composable
 fun CityAppAppBar(
     currentScreenTitle: String,
@@ -61,6 +62,7 @@ fun CityAppAppBar(
     )
 }
 
+//City App function
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CityApp(
@@ -100,6 +102,7 @@ fun CityApp(
 
     Scaffold(
         topBar = {
+            //Calling the function CityAppAppBar
             CityAppAppBar(
                 currentScreenTitle = title_card,
                 canNavigateBack = navController.previousBackStackEntry != null,
@@ -113,12 +116,16 @@ fun CityApp(
             startDestination = CityScreen.Start.name,
             modifier = modifier.padding(innerPadding)
         ) {
+            //Composable leading to the home screen
             composable(route = CityScreen.Start.name) {
+                //Calling the function CityHome
                 CityHome(
                     onNextButtonClicked = { navController.navigate(CityScreen.Categories.name) }
                 )
             }
+            //Composable that leads to the category screen (starting from the home screen)
             composable(route = CityScreen.Categories.name) {
+                //Calling the function SelectCategory
                 SelectCategory(
                     categoryImageList = category_image,
                     categoryTitleList = category_title,
@@ -129,7 +136,9 @@ fun CityApp(
                     }
                 )
             }
+            //Composable that leads to the card screen of the chosen category (starting from the category screen)
             composable(route = CityScreen.SelectCard.name) {
+                //Calling the function SelectCard
                 SelectCard(
                     title_card = title_card,
                     onCardClicked = {
@@ -140,8 +149,10 @@ fun CityApp(
                     }
                 )
             }
+            //Composable that leads to the detail screen of the chosen card (starting from the card screen of a category)
             composable(route = CityScreen.DetailsCard.name) {
                 uiState.detailsCard?.let { item ->
+                    //Calling the function DetailsCard
                     DetailsCard(
                         Activity = item,
                         modifier = modifier

@@ -28,6 +28,7 @@ import com.google.accompanist.pager.calculateCurrentOffsetForPage
 import com.example.mycity.data.ActivitiesCardDataSource.activities
 import kotlin.math.absoluteValue
 
+//SelectCard function
 @OptIn(ExperimentalPagerApi::class, ExperimentalMaterial3Api::class)
 @Composable
 fun SelectCard(
@@ -70,6 +71,7 @@ fun SelectCard(
             ),
             shape = MaterialTheme.shapes.large
         ) {
+            //Calling the function activitiesCard
             activitiesCard(
                 Activity = activitiesCategory[page]
             )
@@ -78,6 +80,7 @@ fun SelectCard(
 
 }
 
+//activitiesCard function
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun activitiesCard(

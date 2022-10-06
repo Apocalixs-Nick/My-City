@@ -22,6 +22,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ){
                     val windowSize = calculateWindowSizeClass(this)
+                    //Calling the function CityApp
                     CityApp(windowSize = windowSize.widthSizeClass)
                 }
                 }

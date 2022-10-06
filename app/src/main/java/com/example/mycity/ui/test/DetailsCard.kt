@@ -25,6 +25,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.compose.*
 import androidx.compose.foundation.layout.Spacer as Spacer
 
+//DetailsCard function
 @Composable
 fun DetailsCard(
     Activity: Activity,
@@ -92,9 +93,11 @@ fun DetailsCard(
         }
 
         val intentContext = LocalContext.current
+        //Calling the function ShareDetailsCard
         ShareDetailsCard(
             Activity = Activity(Activity.Title,Activity.Image,Activity.Description,Activity.category,Activity.address,Activity.latitude,Activity.longitude,Activity.link),
             onShareButtonClicked = {
+                //Calling the private function shareCityCardInformation
                 shareCityCardInformation(
                     intentContext = intentContext,
                     Activity = Activity(Activity.Title,Activity.Image,Activity.Description,Activity.category,Activity.address,Activity.latitude,Activity.longitude,Activity.link)
@@ -104,6 +107,7 @@ fun DetailsCard(
     }
 }
 
+//ShareDetailsCard function
 @Composable
 fun ShareDetailsCard(
     onShareButtonClicked: () -> Unit,
@@ -130,6 +134,7 @@ fun ShareDetailsCard(
     }
 }
 
+//shareCityCardInformation private function
 @SuppressLint("ResourceType")
 private fun shareCityCardInformation(intentContext: Context,Activity: Activity) {
     val sendIntent = Intent().apply {
