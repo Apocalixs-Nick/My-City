@@ -1,7 +1,11 @@
 package com.example.mycity.ui.test
 
+import android.content.Context
 import android.content.Intent
+import android.media.MediaDrm
 import android.net.Uri
+import android.view.View
+import android.widget.PopupWindow
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.ButtonDefaults
@@ -20,9 +24,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.isPopupLayout
 import androidx.core.content.ContextCompat.startActivity
+import androidx.lifecycle.ViewModel
 import com.example.mycity.CityScreen
 import com.example.mycity.R
+import java.io.IOException
+import java.security.AllPermission
 
 //City Home function(first page)
 @Composable
@@ -74,15 +82,23 @@ fun CityButton(
         Text("Start", style = MaterialTheme.typography.titleMedium)
     }
     Spacer(modifier = Modifier.height(45.dp))
+    var catch: Exception? = null
     TextButton(
-        onClick = { startActivity(site, intent, null) },
+        {
+            try {
+                startActivity(site, intent, null)
+            } catch (Exception: Exception) {
+                catch = Exception
+        }
+        },
         modifier = modifier
             .widthIn(min = 250.dp)
-
         //.background(MaterialTheme.colorScheme.background)
     ) {
         Text("Town Hall site", style = MaterialTheme.typography.titleMedium)
     }
+
+    catch?.let { AlertDialogSample(it) }
 }
 
 //City Home function(Preview)
