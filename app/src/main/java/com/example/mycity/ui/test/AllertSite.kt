@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 
+//AlertDialogSample function(pop up)
 @Composable
 fun AlertDialogSample(error: Exception) {
     val openDialog = remember { mutableStateOf(true) }

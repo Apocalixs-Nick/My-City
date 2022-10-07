@@ -98,6 +98,7 @@ fun CityButton(
         Text("Town Hall site", style = MaterialTheme.typography.titleMedium)
     }
 
+    //If the error occurs the AlertDialogSample function will be called to display the pop up
     catch?.let { AlertDialogSample(it) }
 }
 
