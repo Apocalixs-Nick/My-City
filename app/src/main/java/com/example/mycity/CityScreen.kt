@@ -17,7 +17,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.mycity.data.CategoryDataSource.category_image
 import com.example.mycity.data.CategoryDataSource.category_title
 import com.example.mycity.ui.test.*
 import com.example.mycity.ui.test.utils.CityContentnType
@@ -84,7 +83,7 @@ fun CityApp(
         else stringResource(
             id = currentScreen.title
         )
-    val contentType: CityContentnType
+    /*val contentType: CityContentnType
     when (windowSize) {
         WindowWidthSizeClass.Compact -> {
             contentType = CityContentnType.LIST_ONLY
@@ -98,7 +97,7 @@ fun CityApp(
         else -> {
             contentType = CityContentnType.LIST_ONLY
         }
-    }
+    }*/
 
     Scaffold(
         topBar = {
@@ -127,7 +126,6 @@ fun CityApp(
             composable(route = CityScreen.Categories.name) {
                 //Calling the function SelectCategory
                 SelectCategory(
-                    categoryImageList = category_image,
                     categoryTitleList = category_title,
                     onNextButtonClicked = {
                         viewModel.updateCategorySelected(it)

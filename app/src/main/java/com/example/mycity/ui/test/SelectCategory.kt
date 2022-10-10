@@ -20,7 +20,6 @@ import androidx.compose.ui.unit.dp
 //SelectCategory function
 @Composable
 fun SelectCategory(
-    categoryImageList: List<Int>,
     @StringRes categoryTitleList: List<Int>,
     onSelectionChanged: (String) -> Unit = {},
     onCancelButtonClicked: () -> Unit = {},

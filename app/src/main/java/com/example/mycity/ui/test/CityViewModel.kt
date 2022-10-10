@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
 class CityViewModel : ViewModel() {
-    private val _uiState = MutableStateFlow(CityCategory(CategoryDataSource.category_image,CategoryDataSource.category_title))
+    private val _uiState = MutableStateFlow(CityCategory(CategoryDataSource.category_title))
     val uiState: StateFlow<CityCategory> = _uiState.asStateFlow()
 
     //Function for updating the category that has been selected
